@@ -1,0 +1,60 @@
+div.dx-card {
+    text-align: center;
+    justify-content: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    padding: 10px;
+    min-height: 330px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    transition: 0.3s;
+}
+
+div.dx-card > .dx-card-header {
+    font-weight: bolder;
+}
+
+img.service-image {
+    margin-top: 30px;
+    width: 60%;
+    height: auto;
+}
+
+img {
+    vertical-align: middle;
+}
+
+section#dx-service > h3 {
+    color: #444444;
+    font-weight: 600;
+    font-size: 3.5rem;
+    text-align: center;
+}
+
+section#dx-service > p {
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.dx-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+div.dx-card > .dx-card-body > h4 {
+    margin-top: 1rem;
+    font-weight: bolder;
+    color: #444444;
+}
+
+div.dx-card > .dx-card-body > p {
+    color: #666666;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
