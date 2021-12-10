@@ -3,6 +3,7 @@ import { HashRouter, Route, Switch } from "react-router-dom";
 import "./scss/style.scss";
 import LandingPage from "./views/home/Home";
 import AuthContextProvider from "./contexts/AuthContexts";
+import ProtectedRoute from "./routing/ProtectedRoute";
 const loading = (
   <div className="pt-3 text-center">
     <div className="sk-spinner sk-spinner-pulse"></div>
@@ -70,7 +71,7 @@ class App extends Component {
                 name="Page 500"
                 render={(props) => <Page500 {...props} />}
               />
-              <Route
+              <ProtectedRoute
                 path="/home"
                 name="Home"
                 render={(props) => <TheLayout {...props} />}
