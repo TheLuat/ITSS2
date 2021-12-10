@@ -1,0 +1,15 @@
+caption {
+  caption-side: top !important;
+  font-size: 1.5rem;
+}
+
+.btn-label {
+  position: relative;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px 0 0 3px;
+}
+
+.fa {
+  padding: 2px;
+}
