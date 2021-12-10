@@ -11,26 +11,38 @@ const TheLayout = () => {
     authState: { isAuthenticated, isLoading },
   } = useContext(AuthContext);
 
-  const renderDasboard = () => {
-    if (isAuthenticated) {
-      return (
-        <div className="c-app c-default-layout">
-          <TheSidebar />
-          <div className="c-wrapper">
-            <TheHeader />
-            <div className="c-body">
-              <TheContent />
-            </div>
-            <TheFooter />
-          </div>
-        </div>
-      );
-    } else {
-      return <Redirect to="/login"></Redirect>;
-    }
-  };
+  // const renderDasboard = () => {
+  //   if (isAuthenticated) {
+  //     return (
+  //       <div className="c-app c-default-layout">
+  //         <TheSidebar />
+  //         <div className="c-wrapper">
+  //           <TheHeader />
+  //           <div className="c-body">
+  //             <TheContent />
+  //           </div>
+  //           <TheFooter />
+  //         </div>
+  //       </div>
+  //     );
+  //   } else {
+  //     return <Redirect to="/login"></Redirect>;
+  //   }
+  // };
 
-  return <>{renderDasboard()}</>;
+  // return <>{renderDasboard()}</>;
+  return (
+    <div className="c-app c-default-layout">
+      <TheSidebar />
+      <div className="c-wrapper">
+        <TheHeader />
+        <div className="c-body">
+          <TheContent />
+        </div>
+        <TheFooter />
+      </div>
+    </div>
+  );
 };
 
 export default TheLayout;
