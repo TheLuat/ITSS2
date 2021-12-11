@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 const InputForm = (props) => {
   const { clickShowForm, addUser } = props;
   const [userForm, setUserForm] = useState({
-    name: "Name",
-    email: "Email",
-    password: "Password",
+    name: "",
+    email: "",
+    password: "",
   });
 
   const onUserFormChange = (event) => {
@@ -17,11 +17,11 @@ const InputForm = (props) => {
   };
   return (
     <div>
-      <h2>Add a admin user</h2>
+      <h2>管理者の作成</h2>
 
       <div class="form-group row">
         <label for="inputName3" class="col-sm-2 col-form-label">
-          Name
+          名前
         </label>
         <div class="col-sm-10">
           <input
@@ -29,7 +29,7 @@ const InputForm = (props) => {
             type="text"
             class="form-control"
             id="inputName3"
-            placeholder="Name"
+            placeholder="名前"
             value={userForm.name}
             onChange={onUserFormChange}
           />
@@ -37,7 +37,7 @@ const InputForm = (props) => {
       </div>
       <div class="form-group row">
         <label for="inputEmail3" class="col-sm-2 col-form-label">
-          Email
+          メールアドレス
         </label>
         <div class="col-sm-10">
           <input
@@ -45,7 +45,7 @@ const InputForm = (props) => {
             type="email"
             class="form-control"
             id="inputEmail3"
-            placeholder="Email"
+            placeholder="メールアドレス"
             value={userForm.email}
             onChange={onUserFormChange}
           />
@@ -53,7 +53,7 @@ const InputForm = (props) => {
       </div>
       <div class="form-group row">
         <label for="inputPassword3" class="col-sm-2 col-form-label">
-          Password
+          パスワード
         </label>
         <div class="col-sm-10">
           <input
@@ -61,7 +61,7 @@ const InputForm = (props) => {
             type="password"
             class="form-control"
             id="inputPassword3"
-            placeholder="Password"
+            placeholder="パスワード"
             value={userForm.password}
             onChange={onUserFormChange}
           />
@@ -70,14 +70,14 @@ const InputForm = (props) => {
       <div class="form-group row">
         <div class="col-sm-5">
           <button className="btn btn-primary" onClick={addUserClick}>
-            Add User
+            作成する
           </button>
         </div>
       </div>
 
       <div class="col-sm-10 text-center">
         <button className="btn btn-danger center" onClick={clickShowForm}>
-          Close Form
+          フォーム閉じる
         </button>
       </div>
     </div>

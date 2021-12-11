@@ -32,7 +32,7 @@ const Admin = () => {
       return (
         <>
           <Button className="btn btn-info" onClick={clickShowForm}>
-            Add User
+            管理者の作成
           </Button>
         </>
       );
@@ -105,10 +105,10 @@ const Admin = () => {
       >
         <div class="modal-dialog modal-sm">
           <div class="modal-content">
-            <h3>Edit User</h3>
+            <h3>更新</h3>
             <div class="form-group row">
               <label for="inputName3" class="col-sm-2 col-form-label">
-                Name
+                名前
               </label>
               <div class="col-sm-10">
                 <input
@@ -116,7 +116,7 @@ const Admin = () => {
                   type="text"
                   class="form-control"
                   id="inputName3"
-                  placeholder="New name"
+                  placeholder="名前"
                   value={editingUser.name}
                   onChange={onEditUserFormChange}
                 />
@@ -133,7 +133,7 @@ const Admin = () => {
                   type="text"
                   class="form-control"
                   id="inputEmail3"
-                  placeholder="New email"
+                  placeholder="メールアドレス"
                   value={editingUser.email}
                   onChange={onEditUserFormChange}
                 />
@@ -142,7 +142,7 @@ const Admin = () => {
             <div class="form-group row">
               <div class="col-sm-5">
                 <button className="btn btn-primary" onClick={saveButtonClick}>
-                  Save
+                  保存保存
                 </button>
               </div>
             </div>
@@ -154,13 +154,13 @@ const Admin = () => {
       {renderInputForm()}
       {/* ---Show list user--- */}
       <table class="table table-bordered table-hover">
-        <caption>List of admins</caption>
+        <caption>管理者の一覧</caption>
         <thead class="thead-light">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Action</th>
+            <th scope="col">名前</th>
+            <th scope="col">メールアドレス</th>
+            <th scope="col"></th>
           </tr>
         </thead>
 
@@ -178,20 +178,14 @@ const Admin = () => {
                   data-target=".bd-example-modal-sm"
                   onClick={() => handleEditClick(admin)}
                 >
-                  <span class="btn-label d-inline-block mr-2 px-2">
-                    <i class="fa fa-trash"></i>
-                  </span>
-                  Edit
+                  更新
                 </button>
                 <button
                   type="button"
                   class="btn btn-labeled btn-danger"
                   onClick={() => handleDelete(admin)}
                 >
-                  <span class="btn-label d-inline-block mr-2 px-2">
-                    <i class="fa fa-remove"></i>
-                  </span>
-                  Delete
+                  削除
                 </button>
               </td>
             </tr>
