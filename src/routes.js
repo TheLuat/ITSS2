@@ -61,6 +61,7 @@ const User = React.lazy(() => import("./views/users/User"));
 const GroupKPI = React.lazy(() => import("./views/pages/KPI/GroupKPI"));
 const EmployeeKPI = React.lazy(() => import("./views/pages/KPI/EmployeeKPI"));
 const Brand = React.lazy(() => import("./views/brands"));
+const Admin = React.lazy(() => import("./views/admin"));
 
 const routes = [
   { path: "/home", exact: true, name: "Home" },
@@ -153,6 +154,7 @@ const routes = [
   { path: "/group-kpi", name: "Group KPI", component: GroupKPI },
   { path: "/employee-kpi", name: "Employee KPI", component: EmployeeKPI },
   { path: "/home/brand", name: "Brand", component: Brand },
+  { path: "/home/admin", name: "Admin", component: Admin },
 ];
 
 export default routes;

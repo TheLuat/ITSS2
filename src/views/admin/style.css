@@ -1,0 +1,37 @@
+caption {
+  caption-side: top !important;
+  font-size: 1.5rem;
+}
+
+.btn-label {
+  position: relative;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px 0 0 3px;
+}
+
+.fa {
+  padding: 2px;
+}
+
+.form-email,
+.form-name,
+.form-password {
+  display: flex;
+  margin-top: 5px;
+}
+
+.form-email > p,
+.form-name > p,
+.form-password > p {
+  width: 100px;
+  margin-top: 7px;
+}
+
+.form-email > input,
+.form-name > input,
+.form-password > input {
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid blue;
+}
