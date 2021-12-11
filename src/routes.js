@@ -43,6 +43,7 @@ const ButtonGroups = React.lazy(() =>
 const Buttons = React.lazy(() => import("./views/buttons/buttons/Buttons"));
 const Charts = React.lazy(() => import("./views/charts/Charts"));
 const Dashboard = React.lazy(() => import("./views/dashboard/Dashboard"));
+const PostList = React.lazy(() => import('./views/pages/postlist/PostList'));
 const CoreUIIcons = React.lazy(() =>
   import("./views/icons/coreui-icons/CoreUIIcons")
 );
@@ -66,6 +67,7 @@ const Admin = React.lazy(() => import("./views/admin"));
 const routes = [
   { path: "/home", exact: true, name: "Home" },
   { path: "/home/dashboard", name: "Dashboard", component: Dashboard },
+  { path: '/home/post', name: 'Post', component: PostList },
   { path: "/home/theme", name: "Theme", component: Colors, exact: true },
   { path: "/home/theme/colors", name: "Colors", component: Colors },
   { path: "/home/theme/typography", name: "Typography", component: Typography },
