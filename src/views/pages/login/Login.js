@@ -41,7 +41,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     setForm({ ...data });
     const loginData = await loginUser(data);
-    history.push("/home/dashboard/");
+    history.push("/home/admin/");
     console.log(loginData);
   };
   const showBody = () => {
@@ -52,7 +52,7 @@ const Login = () => {
         </div>
       );
     } else if (isAuthenticated) {
-      return <Redirect to="home/dashboard"></Redirect>;
+      return <Redirect to="home/admin"></Redirect>;
     } else {
       return (
         <div className="c-app c-default-layout flex-row align-items-center">
