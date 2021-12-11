@@ -52,10 +52,10 @@ const Brand = () => {
         <thead class="thead-light">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Requested day</th>
-            <th scope="col">Action</th>
+            <th scope="col">名前</th>
+            <th scope="col">メールアドレス</th>
+            <th scope="col">新規登録の日</th>
+            <th scope="col"></th>
           </tr>
         </thead>
 
@@ -72,20 +72,14 @@ const Brand = () => {
                   class="btn btn-labeled btn-success mr-2"
                   onClick={() => handleAccept(brand.id)}
                 >
-                  <span class="btn-label d-inline-block mr-2 px-2">
-                    <i class="fa fa-check"></i>
-                  </span>
-                  Accept
+                  承認
                 </button>
                 <button
                   type="button"
                   class="btn btn-labeled btn-danger"
                   onClick={() => handleReject(brand.id)}
                 >
-                  <span class="btn-label d-inline-block mr-2 px-2">
-                    <i class="fa fa-remove"></i>
-                  </span>
-                  Reject
+                  拒絶
                 </button>
               </td>
             </tr>

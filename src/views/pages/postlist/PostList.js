@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axiosCLient from "src/axios/axiosClient";
-import { CCard, CCardBody, CCardHeader, CCol, CRow } from "@coreui/react";
 
 const fetcher = axiosCLient();
 const PostList = () => {
   const [data, setData] = useState([]);
-  const [list, updateList] = useState(data);
 
   useEffect(() => getData(), []);
   const getData = async () => {
@@ -37,17 +35,17 @@ const PostList = () => {
     <div className="c-body">
       <table className="table table-hover table-outline mb-0 d-none d-sm-table">
         <tr>
-          <th>ID</th>
-          <th>User ID</th>
-          <th>Title</th>
-          <th>Action</th>
+          <th className="">#</th>
+          <th>ブランド</th>
+          <th>タイトル</th>
+          <th></th>
         </tr>
         <thead className="thead-light"></thead>
         <tbody>
-          {data.map((item) => {
+          {data?.map((item) => {
             return (
               <tr>
-                <td className="text-center" style={{ width: "10%" }}>
+                <td className="text-left" style={{}}>
                   <div className="c-avatar">{item.id}</div>
                 </td>
                 <td style={{ width: "10%" }}>
@@ -59,8 +57,11 @@ const PostList = () => {
                 <td>
                   <div className="clearfix">
                     <div className="float-left">
-                      <button onClick={() => handleRemoveItem(item.id)}>
-                        Delete
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => handleRemoveItem(item.id)}
+                      >
+                        削除
                       </button>
                     </div>
                   </div>
