@@ -36,7 +36,6 @@ const PostList = () => {
       <table className="table table-hover table-outline mb-0 d-none d-sm-table">
         <tr>
           <th className="">#</th>
-          <th>ブランド</th>
           <th>タイトル</th>
           <th></th>
         </tr>
@@ -47,9 +46,6 @@ const PostList = () => {
               <tr>
                 <td className="text-left" style={{}}>
                   <div className="c-avatar">{item.id}</div>
-                </td>
-                <td style={{ width: "10%" }}>
-                  <div>{item.user_id}</div>
                 </td>
                 <td style={{ width: "70%" }}>
                   <div>{item.title}</div>

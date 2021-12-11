@@ -48,13 +48,13 @@ const Admin = () => {
   };
   const handleDelete = async (id) => {
     try {
-      const res = await fetcher.post(
-        `http://dev1.solashi.com:8001/api/v1/brands/reject/${id}`
+      const res = await fetcher.delete(
+        `http://dev1.solashi.com:8001/api/v1/admins/${id}`
       );
       await getData();
-      alert("新規登録のリクエストを削除しました");
+      alert("削除が成功しました");
     } catch (error) {
-      alert("新規登録のリクエストを削除はエラーになりました");
+      alert("削除はエラーになりました");
       console.log(error);
     }
   };
@@ -67,11 +67,11 @@ const Admin = () => {
       );
       await getData();
       setShowForm(!showForm);
-      alert("Add user success");
+      alert("作成が成功しました");
     } catch (error) {
       console.log(error);
       setShowForm(!showForm);
-      alert("Add user fail");
+      alert("作成はエラーになりました");
     }
   };
 
@@ -83,10 +83,10 @@ const Admin = () => {
         { name, email }
       );
       await getData();
-      alert("Edit user success");
+      alert("更新が成功しました");
     } catch (error) {
       console.log(error);
-      alert("Edit user fail");
+      alert("更新はエラーになりました");
     }
   };
 
@@ -104,13 +104,13 @@ const Admin = () => {
         aria-hidden="true"
       >
         <div class="modal-dialog modal-sm">
-          <div class="modal-content">
+          <div class="modal-content p-5" style={{ width: "500px" }}>
             <h3>更新</h3>
             <div class="form-group row">
-              <label for="inputName3" class="col-sm-2 col-form-label">
+              <label for="inputName3" class="col-md-4 col-form-label">
                 名前
               </label>
-              <div class="col-sm-10">
+              <div class="col-md-8">
                 <input
                   name="name"
                   type="text"
@@ -124,10 +124,10 @@ const Admin = () => {
             </div>
 
             <div class="form-group row">
-              <label for="inputEmail3" class="col-sm-2 col-form-label">
-                Email
+              <label for="inputEmail3" class="col-md-4 col-form-label">
+                メールアドレス
               </label>
-              <div class="col-sm-10">
+              <div class="col-md-8">
                 <input
                   name="email"
                   type="text"
@@ -183,7 +183,7 @@ const Admin = () => {
                 <button
                   type="button"
                   class="btn btn-labeled btn-danger"
-                  onClick={() => handleDelete(admin)}
+                  onClick={() => handleDelete(admin.id)}
                 >
                   削除
                 </button>
