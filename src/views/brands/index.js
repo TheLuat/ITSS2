@@ -47,7 +47,7 @@ const Brand = () => {
   return (
     <div class="container">
       <table class="table table-bordered table-hover">
-        <caption>List of requests</caption>
+        <caption>新規登録のリクエストの一覧</caption>
 
         <thead class="thead-light">
           <tr>
