@@ -54,33 +54,49 @@ const Brand = () => {
             <th scope="col">#</th>
             <th scope="col">名前</th>
             <th scope="col">メールアドレス</th>
+            <th scope="col">ロゴ</th>
+            <th scope="col">分野</th>
             <th scope="col">新規登録の日</th>
             <th scope="col"></th>
           </tr>
         </thead>
 
         <tbody>
-          {data?.map((brand, index) => (
+          {data?.data?.map((brand, index) => (
             <tr>
               <th scope="row">{index + 1}</th>
               <td>{brand.name}</td>
               <td>{brand.email}</td>
+              <td>
+                <img
+                  src={`http://dev1.solashi.com:8001/storage/${brand?.logo_path}`}
+                  alt="logo"
+                  style={{ width: "100px", height: "100px" }}
+                />
+              </td>
+              <td>{brand?.category?.name}</td>
               <td>{new Date(brand.created_at).toLocaleDateString("ja-JP")}</td>
               <td>
-                <button
-                  type="button"
-                  class="btn btn-labeled btn-success mr-2"
-                  onClick={() => handleAccept(brand.id)}
-                >
-                  承認
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-labeled btn-danger"
-                  onClick={() => handleReject(brand.id)}
-                >
-                  拒絶
-                </button>
+                {brand.is_active ? (
+                  ""
+                ) : (
+                  <>
+                    <button
+                      type="button"
+                      class="btn btn-labeled btn-success mr-2"
+                      onClick={() => handleAccept(brand.id)}
+                    >
+                      承認
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-labeled btn-danger"
+                      onClick={() => handleReject(brand.id)}
+                    >
+                      拒絶
+                    </button>
+                  </>
+                )}
               </td>
             </tr>
           ))}

@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./style.css";
 import axiosCLient from "src/axios/axiosClient";
 import InputForm from "./inputForm/index";
 import { Button } from "react-bootstrap";
+import { AuthContext } from "src/contexts/AuthContexts";
+
 const fetcher = axiosCLient();
 
 const Admin = () => {
   const [data, setData] = useState([]);
   const [showForm, setShowForm] = useState(false);
   const [editingUser, setEditingUser] = useState({});
+  const { authState } = useContext(AuthContext);
 
   useEffect(() => getData(), []);
 
@@ -165,7 +168,7 @@ const Admin = () => {
         </thead>
 
         <tbody>
-          {data?.map((admin, index) => (
+          {data?.data?.map((admin, index) => (
             <tr>
               <th scope="row">{index + 1}</th>
               <td>{admin.name}</td>
@@ -184,6 +187,7 @@ const Admin = () => {
                   type="button"
                   class="btn btn-labeled btn-danger"
                   onClick={() => handleDelete(admin.id)}
+                  disabled={authState.user.id === admin.id}
                 >
                   削除
                 </button>

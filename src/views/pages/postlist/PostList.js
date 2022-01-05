@@ -37,18 +37,40 @@ const PostList = () => {
         <tr>
           <th className="">#</th>
           <th>タイトル</th>
+          <th>画像</th>
+          <th>ブランド</th>
+          <th>カテゴリー</th>
+          <th>コンテンツ</th>
           <th></th>
         </tr>
         <thead className="thead-light"></thead>
         <tbody>
-          {data?.map((item) => {
+          {data?.data?.map((item, index) => {
             return (
               <tr>
-                <td className="text-left" style={{}}>
-                  <div className="c-avatar">{item.id}</div>
+                <td className="text-left" style={{ width: "100px" }}>
+                  <div className="c-avatar">{index + 1}</div>
                 </td>
-                <td style={{ width: "70%" }}>
+                <td style={{ width: "150px" }}>
                   <div>{item.title}</div>
+                </td>
+                <td>
+                  <img
+                    src={`http://dev1.solashi.com:8001/storage/${item.img_url}`}
+                    alt="anh minh hoa"
+                    style={{ width: "200px", height: "150px" }}
+                  />
+                </td>
+                <td>{item?.brand?.name}</td>
+                <td>{item?.product_category?.name}</td>
+                <td
+                  style={{
+                    width: "300px",
+                    overflowX: "auto",
+                    wordBreak: "break-all",
+                  }}
+                >
+                  {item?.content}
                 </td>
                 <td>
                   <div className="clearfix">
