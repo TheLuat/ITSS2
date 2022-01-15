@@ -163,7 +163,9 @@ const Admin = () => {
             <th scope="col">#</th>
             <th scope="col">名前</th>
             <th scope="col">メールアドレス</th>
-            <th scope="col"></th>
+            <th scope="col" className="text-center">
+              アクション
+            </th>
           </tr>
         </thead>
 
@@ -173,7 +175,7 @@ const Admin = () => {
               <th scope="row">{index + 1}</th>
               <td>{admin.name}</td>
               <td>{admin.email}</td>
-              <td>
+              <td className="d-flex justify-content-center">
                 <button
                   type="button"
                   class="btn btn-labeled btn-warning mr-2"

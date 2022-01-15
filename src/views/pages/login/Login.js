@@ -63,8 +63,7 @@ const Login = () => {
                   <CCard className="p-4 mx-5">
                     <CCardBody>
                       <CForm onSubmit={handleSubmit(onSubmit)}>
-                        <h1 style={{ color: "aqua" }}>Login</h1>
-                        <p className="text-muted">Sign In to your account</p>
+                        <h1 style={{ color: "aqua" }}>ログイン</h1>
                         <CInputGroup className="mb-3">
                           <CInputGroupPrepend>
                             <CInputGroupText>
@@ -78,16 +77,16 @@ const Login = () => {
                             })}
                             type="email"
                             className="form-control"
-                            placeholder="Enter email"
+                            placeholder="メールアドレス"
                           />
                           {errors?.email?.type === "required" && (
                             <span className="span_red">
-                              This field is required
+                              メールアドレスは必須です
                             </span>
                           )}
                           {errors?.email?.type === "pattern" && (
                             <span className="span_red">
-                              Must be in correct email format
+                              メールアドレスのフォーマットではありません
                             </span>
                           )}
                         </CInputGroup>
@@ -101,21 +100,17 @@ const Login = () => {
                             type="password"
                             className="form-control"
                             id="password"
-                            placeholder="Enter password"
+                            placeholder="パスワード"
                             {...register("password", {
                               required: true,
                               minLength: 4,
                             })}
                           />
                           {errors?.password?.type === "required" && (
-                            <span className="span_red">
-                              This field is required
-                            </span>
+                            <span className="span_red">これは必須です</span>
                           )}
                           {errors?.password?.type === "minLength" && (
-                            <span className="span_red">
-                              Password must be at least 4 characters
-                            </span>
+                            <span className="span_red"></span>
                           )}
                         </CInputGroup>
                         <CRow>
@@ -125,12 +120,7 @@ const Login = () => {
                               type="submit"
                               className="px-4"
                             >
-                              Login
-                            </CButton>
-                          </CCol>
-                          <CCol xs="6" className="text-right">
-                            <CButton color="link" className="px-0">
-                              Forgot password?
+                              ログイン
                             </CButton>
                           </CCol>
                         </CRow>
